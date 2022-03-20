@@ -5,7 +5,7 @@ COPY ./build.gradle.kts ./settings.gradle.kts ./gradle.properties ./gradlew ./gr
 COPY ./gradle ./gradle/
 RUN chmod +x ./gradlew
 RUN ./gradlew build
-COPY . .
+COPY ./src ./src/
 RUN ./gradlew installDist
 
 FROM openjdk:8-jdk
