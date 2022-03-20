@@ -3,6 +3,7 @@ RUN mkdir /app
 WORKDIR /app
 COPY ./build.gradle.kts ./settings.gradle.kts ./gradle.properties ./gradlew ./gradlew.bat ./
 COPY ./gradle ./gradle/
+RUN chmod +x ./gradlew
 RUN ./gradlew build
 COPY . .
 RUN ./gradlew installDist
